@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Background_Remover</title>
+</head>
+<body>
+    <div class="container">
+        <div class="imgb">
+            <img src="images/transparent.png" width="100%">
+            <div class="img-wrap">
+                <img src="images/original.jpg" id="origimg">
+            </div>
+        </div>
+    </div>
+    <script>
+        var imgBox=document.querySelector(".imgb");
+        var imgWrap=document.querySelector(".img-wrap");
+        var origimg=document.getElementById("origimg");
+        origimg.style.width=imgBox.offsetWidth + "px";
+        var leftSpace=imgBox.offsetLeft;
+        console.log(leftSpace);
+        imgBox.onmousemove=function(e){
+            console.log(e.pageX);
+            var boxWidth=(e.pageX-leftSpace)+"px";
+            imgWrap.style.width=boxWidth;
+        }
+    </script>
+</body>
+</html>
